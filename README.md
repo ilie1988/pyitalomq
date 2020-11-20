@@ -1,13 +1,13 @@
-# pylokimq
+# pyitalomq
 
-pybind layer for lokimq
+pybind layer for italomq
 
 ## building
 
 check the source out (recursive repo):
 
-    $ git clone --recursive https://github.com/loki-project/loki-pylokimq
-    $ cd loki-pylokimq
+    $ git clone --recursive https://github.com/italo-project/italo-pyitalomq
+    $ cd italo-pyitalomq
 
 build:
 

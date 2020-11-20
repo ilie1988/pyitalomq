@@ -1,4 +1,4 @@
-import pylokimq
+import pyitalomq
 import base64
 import subprocess
 import shlex
@@ -61,7 +61,7 @@ def decode_value(data, first=None):
 
 
 def decode_address(data):
-    return '{}.loki'.format(pylokimq.base32z_encode(decode_value(data)[b's'][b's']))
+    return '{}.italo'.format(pyitalomq.base32z_encode(decode_value(data)[b's'][b's']))
 
 def handle_auth_impl(args, cmd):
     cmd2 = cmd
@@ -85,7 +85,7 @@ def main():
     ap.add_argument("--cmd", required=True, help="script to call for authentication")
     args = ap.parse_args()
     cmd = shlex.split(args.cmd)
-    lmq = pylokimq.LokiMQ()
+    lmq = pyitalomq.ItaloMQ()
     lmq.listen_plain(args.bind)
     lmq.add_anonymous_category("llarp")
     lmq.add_request_command("llarp", "auth", lambda x : handle_auth(x, cmd))

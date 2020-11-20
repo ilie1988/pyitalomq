@@ -5,10 +5,10 @@
 
 namespace py = pybind11;
 
-namespace lokimq
+namespace italomq
 {
   void
-  LokiMQ_Init(py::module &mod);
+  ItaloMQ_Init(py::module &mod);
 
   void
   BEncode_Init(py::module & mod);

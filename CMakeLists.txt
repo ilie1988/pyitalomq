@@ -8,10 +8,10 @@ if(CCACHE_PROGRAM)
   set_property(GLOBAL PROPERTY RULE_LAUNCH_COMPILE "${CCACHE_PROGRAM}")
 endif()
 
-set(PROJECT_NAME pylokimq)
+set(PROJECT_NAME pyitalomq)
 project(${PROJECT_NAME}
     VERSION 0.0.1
-    DESCRIPTION "pybind layer for lokimq"
+    DESCRIPTION "pybind layer for italomq"
     LANGUAGES CXX)
 
 
@@ -41,13 +41,13 @@ if(SUBMODULE_CHECK)
     endfunction ()
     
     check_submodule(external/pybind11)
-    check_submodule(external/loki-mq)
+    check_submodule(external/italo-mq)
   endif()
 endif()
 
 add_compile_options(-Wno-deprecated-declarations)
 
 add_subdirectory(external/pybind11)
-add_subdirectory(external/loki-mq)
+add_subdirectory(external/italo-mq)
 
-add_subdirectory(pylokimq)
+add_subdirectory(pyitalomq)

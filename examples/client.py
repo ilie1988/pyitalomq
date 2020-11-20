@@ -1,8 +1,8 @@
-import pylokimq
+import pyitalomq
 
 def do_connected(lmq, conn):
     print("connected via", conn)
-    return lmq.request(conn, "llarp.auth", ["dq3j4dj99w6wi4t4yjnya8sxtqr1rojt8jgnn6467o6aoenm3o3o.loki", "5:token"])
+    return lmq.request(conn, "llarp.auth", ["dq3j4dj99w6wi4t4yjnya8sxtqr1rojt8jgnn6467o6aoenm3o3o.italo", "5:token"])
 
 def do_request(lmq):
     print('connect')
@@ -11,7 +11,7 @@ def do_request(lmq):
         return do_connected(lmq, conn)
 
 def main():
-    lmq = pylokimq.LokiMQ()
+    lmq = pyitalomq.ItaloMQ()
     print("start")
     lmq.start()
     print(do_request(lmq))

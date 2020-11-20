@@ -1,4 +1,4 @@
-import pylokimq
+import pyitalomq
 import time
 
 def handle_auth(args):
@@ -7,7 +7,7 @@ def handle_auth(args):
     return "OK"
 
 def main():
-    lmq = pylokimq.LokiMQ()
+    lmq = pyitalomq.ItaloMQ()
     lmq.listen_plain("ipc:///tmp/lmq.sock")
     lmq.add_anonymous_category("llarp")
     lmq.add_request_command("llarp", "auth", handle_auth)

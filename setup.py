@@ -61,13 +61,13 @@ class CMakeBuild(build_ext):
         subprocess.check_call(['cmake', '--build', '.'] + build_args, cwd=self.build_temp)
 
 setup(
-    name='pylokimq',
+    name='pyitalomq',
     version='0.0.1',
     author='Jeff Becker',
     author_email='jeff@i2p.rocks',
-    description='pybind lokimq bindings',
+    description='pybind italomq bindings',
     long_description='',
-    ext_modules=[CMakeExtension('pylokimq')],
+    ext_modules=[CMakeExtension('pyitalomq')],
     cmdclass=dict(build_ext=CMakeBuild),
     zip_safe=False,
 )
